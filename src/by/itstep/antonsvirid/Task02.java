@@ -28,9 +28,6 @@ public class Task02 {
         String unitDigit = "";
 
         switch (unit) {
-            case 0:
-                unitDigit = "";
-                break;
             case 1:
                 unitDigit = "one";
                 break;
@@ -63,9 +60,6 @@ public class Task02 {
         String dozenDigit = "";
 
         switch (dozen) {
-            case 0:
-                dozenDigit = "";
-                break;
             case 1:
                 dozenDigit = "one";
                 break;
@@ -95,17 +89,6 @@ public class Task02 {
                 break;
         }
 
-        String hundredDigit = "";
-
-        switch (hundred) {
-            case 0:
-                hundredDigit = "";
-                break;
-            case 1:
-                hundredDigit = "one";
-                break;
-        }
-
         if (dozen == 0 && hundred == 0) {
             result = unitDigit;
         } else if (hundred == 0 && dozen == 1 && unit == 1) {
@@ -120,21 +103,21 @@ public class Task02 {
             result = unitDigit + TEEN;
         } else if (hundred == 0 && dozen >= 2) {
             result = dozenDigit + " " + unitDigit;
-        } else if (hundred == 1 && dozen == 0 && unit == 0) {
+        } else if (dozen == 0 && unit == 0) {
             result = ONE_HUNDRED;
-        } else if (hundred == 1 && dozen == 0) {
+        } else if (dozen == 0) {
             result = ONE_HUNDRED_AND + unitDigit;
-        } else if (hundred == 1 && dozen == 1 && unit == 0) {
+        } else if (dozen == 1 && unit == 0) {
             result = ONE_HUNDRED_AND + TEN;
-        } else if (hundred == 1 && dozen == 1 && unit == 1) {
+        } else if (dozen == 1 && unit == 1) {
             result = ONE_HUNDRED + ELEVEN;
-        } else if (hundred == 1 && dozen == 1 && unit == 2) {
+        } else if (dozen == 1 && unit == 2) {
             result = ONE_HUNDRED + TWELVE;
-        } else if (hundred == 1 && dozen == 1 && unit == 3) {
+        } else if (dozen == 1 && unit == 3) {
             result = ONE_HUNDRED + THIRTEEN;
-        } else if (hundred == 1 && dozen == 1 && unit >= 4) {
+        } else if (dozen == 1 && unit >= 4) {
             result = ONE_HUNDRED_AND + unitDigit + TEEN;
-        } else if (hundred == 1 && dozen == 2) {
+        } else if (dozen == 2) {
             result = ONE_HUNDRED_AND + dozenDigit;
         }
         return result;
