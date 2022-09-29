@@ -3,6 +3,15 @@ package by.itstep.antonsvirid;
 import java.util.Scanner;
 
 public class Task02 {
+
+    public static final String ELEVEN = "eleven";
+    public static final String TWELVE = "twelve";
+    public static final String THIRTEEN = "thirteen";
+    public static final String TEEN = "teen";
+    public static final String TEN = "ten";
+    public static final String ONE_HUNDRED_AND = "one hundred and ";
+    public static final String ONE_HUNDRED = "one hundred ";
+
     public static String AgeСypher(int age) {
 
         if (age < 1 || age > 120) {
@@ -99,30 +108,34 @@ public class Task02 {
 
         if (dozen == 0 && hundred == 0) {
             result = unitDigit;
-        }  else if (hundred == 0 && dozen == 1 && unit ==1) {
-            result = "eleven";
+        } else if (hundred == 0 && dozen == 1 && unit == 1) {
+            result = ELEVEN;
         } else if (hundred == 0 && dozen == 1 && unit == 2) {
-            result = "twelve";
+            result = TWELVE;
         } else if (hundred == 0 && dozen == 1 && unit == 3) {
-            result = "thirteen";
+            result = THIRTEEN;
         } else if (hundred == 0 && dozen == 1 && unit == 0) {
-            result = "ten";
+            result = TEN;
         } else if (hundred == 0 && dozen == 1) {
-            result = unitDigit + "teen";
+            result = unitDigit + TEEN;
         } else if (hundred == 0 && dozen >= 2) {
             result = dozenDigit + " " + unitDigit;
+        } else if (hundred == 1 && dozen == 0 && unit == 0) {
+            result = ONE_HUNDRED;
         } else if (hundred == 1 && dozen == 0) {
-            result = "one hundred and " + unitDigit;
-        }  else if (hundred == 1 && dozen == 1 && unit == 0) {
-            result = "one hundred and ten";
-        }  else if (hundred == 1 && dozen == 1 && unit == 1) {
-            result = "one hundred eleven";
-        }  else if (hundred == 1 && dozen == 1 && unit == 2) {
-            result = "one hundred twelve";
-        }   else if (hundred == 1 && dozen == 1 && unit == 3) {
-            result = "one hundred thirteen";
-        }   else if (hundred == 1 && dozen == 1 && unit >= 4) {
-            result = "one hundred and " + unitDigit + "teen";
+            result = ONE_HUNDRED_AND + unitDigit;
+        } else if (hundred == 1 && dozen == 1 && unit == 0) {
+            result = ONE_HUNDRED_AND + TEN;
+        } else if (hundred == 1 && dozen == 1 && unit == 1) {
+            result = ONE_HUNDRED + ELEVEN;
+        } else if (hundred == 1 && dozen == 1 && unit == 2) {
+            result = ONE_HUNDRED + TWELVE;
+        } else if (hundred == 1 && dozen == 1 && unit == 3) {
+            result = ONE_HUNDRED + THIRTEEN;
+        } else if (hundred == 1 && dozen == 1 && unit >= 4) {
+            result = ONE_HUNDRED_AND + unitDigit + TEEN;
+        } else if (hundred == 1 && dozen == 2) {
+            result = ONE_HUNDRED_AND + dozenDigit;
         }
         return result;
     }
